@@ -62,7 +62,7 @@ app.get("/recipes/difficulty/easy", async (req, res) => {
 });
 
 // 10
-app.patch("/recipes/:id", async (req, res) => {
+app.post("/recipes/:id", async (req, res) => {
   try {
     const recipe = await Recipe.findByIdAndUpdate(
       req.params.id,
@@ -77,7 +77,7 @@ app.patch("/recipes/:id", async (req, res) => {
 });
 
 // 11
-app.patch("/recipes/title/:title", async (req, res) => {
+app.post("/recipes/title/:title", async (req, res) => {
   try {
     const recipe = await Recipe.findOneAndUpdate(
       { title: req.params.title },
